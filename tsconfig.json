@@ -2,12 +2,6 @@
     "compilerOptions": {
       "target": "es2017",
       "module": "commonjs",
-      "lib": [
-        "dom",
-        "es5",
-        "es6",
-        "esnext.asynciterable"
-      ],
       "declaration": true,
       "pretty": true,
       "inlineSourceMap": true,
@@ -27,6 +21,12 @@
         ],
         "@ok/models/*": [
           "./src/models/*"
+        ],
+        "@ok/services": [
+          "./src/services"
+        ],
+        "@ok/services/*": [
+          "./src/services/*"
         ],
       }
     },
