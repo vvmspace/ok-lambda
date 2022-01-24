@@ -1,5 +1,14 @@
+service: ok-lambda
 provider:
   name: aws
   runtime: nodejs14.x
   stage: ${opt:stage, 'dev'}
   region: eu-west-1
+
+functions:
+  tick:
+    handler: ./dist/tick.handler
+    events:
+      - schedule: rate(1 minute)
+    environment:
+      MQTT_CONNECTION_STRING: ${ssm:/ok/mqtt}
